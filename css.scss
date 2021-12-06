@@ -1,5 +1,12 @@
-$x:red;
 
-p{
-    color:$x;
+@font-face {
+    font-family: vazir-font;
+    src: url(../assets/Farsi-Digits/Vazir-Light-FD-UI.woff2) format("woff2"),
+    url(../assets/Farsi-Digits/Vazir-Light-FD-UI.woff) format('woff'),
+    url(../assets/Farsi-Digits/Vazir-Regular-FD-UI.woff2) format('woff2'),
+    url(../assets/Farsi-Digits/Vazir-Regular-FD-UI.woff1) format('woff1'),
+    url(../assets/Farsi-Digits/Vazir-Thin-FD-UI.woff2) format('woff2'),
+    url(../assets/Farsi-Digits/Vazir-Thin-FD-UI.woff) format('woff');
+    font-weight: 700;
+    font-style: normal;
 }
