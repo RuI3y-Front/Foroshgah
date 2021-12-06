@@ -1,12 +1,34 @@
-
+// Font Varible!! 
+$font-path:'../assets/Farsi-Digits';
+$font-family:'vazir-font';
+$font-weight:700;
+$font-style:"normal";
 @font-face {
-    font-family: vazir-font;
-    src: url(../assets/Farsi-Digits/Vazir-Light-FD-UI.woff2) format("woff2"),
-    url(../assets/Farsi-Digits/Vazir-Light-FD-UI.woff) format('woff'),
-    url(../assets/Farsi-Digits/Vazir-Regular-FD-UI.woff2) format('woff2'),
-    url(../assets/Farsi-Digits/Vazir-Regular-FD-UI.woff1) format('woff1'),
-    url(../assets/Farsi-Digits/Vazir-Thin-FD-UI.woff2) format('woff2'),
-    url(../assets/Farsi-Digits/Vazir-Thin-FD-UI.woff) format('woff');
-    font-weight: 700;
-    font-style: normal;
+    font-family: $font-family;
+    src: url(#{$font-path}/Vazir-Light-FD-UI.woff2) format("woff2"),
+    url(#{$font-path}/Vazir-Light-FD-UI.woff) format('woff'),
+    url(#{$font-path}/Vazir-Regular-FD-UI.woff2) format('woff2'),
+    url(#{$font-path}/Vazir-Regular-FD-UI.woff1) format('woff1'),
+    url(#{$font-path}/Vazir-Thin-FD-UI.woff2) format('woff2'),
+    url(#{$font-path}/Vazir-Thin-FD-UI.woff) format('woff');
+    font-weight: $font-weight;
+    font-style: $font-style;
+}
+
+*{
+    font-family: $font-family;
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+    box-sizing: border;
+}
+body{
+    font-family: $font-family;
+}
+
+ul,li,ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
 }
