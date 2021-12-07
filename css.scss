@@ -1,155 +1,256 @@
-// Font Varible!! 
-$font-path:'';
-$font-family:'vazir';
-$font-weight:700px;
-$font-style:"normal";
-$defult-font-size:16px;
-$menu-link:rgb(46,46,46);
-$nav-link-hover:rgb(54,114,228);
-$soical-icon:#5458 ;
-$soical-icon-hover:rgba(56, 5, 5, 0.533);
+// Font Varible!!
+$font-path: "";
+$font-family: "vazir";
+$font-weight: 700px;
+$font-style: "normal";
+$defult-font-size: 16px;
+$menu-link: rgb(46, 46, 46);
+$nav-link-hover: rgb(54, 114, 228);
+$soical-icon: #5458;
+$soical-icon-hover: rgba(56, 5, 5, 0.533);
+
 // Mixins
-@mixin flex($flex:flex,$position-x:center,$position-y:center) {
-        //مقادیر پیش فرض گرفته 
+@mixin flex($flex: flex, $position-x: center, $position-y: center) {
+  //مقادیر پیش فرض گرفته
+  display: $flex;
+  justify-content: $position-x;
+  align-items: $position-y;
+}
+// درست کردن مقدار پدینگ و مارچین هر دو باهم
+@mixin margin-padding($top, $right, $bottom, $left, $margin: true) {
+  @if ($margin) {
+    margin: $top $right $bottom $left;
+  } @else {
+    padding: $top $right $bottom $left;
+  }
+}
+@mixin section-creator($flex:flex , $flexbasis:null,$maxwidth:null) {
     display: $flex;
-    justify-content: $position-x;
-    align-items: $position-y;
-}
-// درست کردن مقدار پدینگ و مارچین هر دو باهم 
-@mixin margin-padding($top,$right,$bottom,$left,$margin: true) {
-   @if($margin){
-        margin: $top $right $bottom $left;
-   }
-   @else{
-       padding: $top $right $bottom $left;;
-   }
+    flex-basis: $flexbasis;
+    max-width: $maxwidth;
 }
 @font-face {
-    font-family: $font-family;
-    src: url('./assets/fonts/Vazir-Regular-FD-WOL-UI.woff2') format('woff2'), url('./assets/fonts/Vazir-Regular-FD-WOL-UI.woff') format('woff');
-    font-weight: normal;
-    font-display: swap;
+  font-family: $font-family;
+  src: url("./assets/fonts/Vazir-Regular-FD-WOL-UI.woff2") format("woff2"),
+    url("./assets/fonts/Vazir-Regular-FD-WOL-UI.woff") format("woff");
+  font-weight: normal;
+  font-display: swap;
 }
 @font-face {
-    font-family: $font-family;
-    src: url('./assets/fonts/Vazir-Bold-FD-WOL-UI.woff2') format('woff2'), url('./assets/fonts/Vazir-Bold-FD-WOL-UI.woff') format('woff');
-    font-weight: bold;
-    font-display: swap;
+  font-family: $font-family;
+  src: url("./assets/fonts/Vazir-Bold-FD-WOL-UI.woff2") format("woff2"),
+    url("./assets/fonts/Vazir-Bold-FD-WOL-UI.woff") format("woff");
+  font-weight: bold;
+  font-display: swap;
 }
 @font-face {
-    font-family: $font-family;
-    src: url('./assets/fonts/Vazir-Thin-FD-WOL-UI.woff2') format('woff2'), url('./assets/fonts/Vazir-Thin-FD-WOL-UI.woff') format('woff');
-    font-weight: 100;
-    font-display: swap;
+  font-family: $font-family;
+  src: url("./assets/fonts/Vazir-Thin-FD-WOL-UI.woff2") format("woff2"),
+    url("./assets/fonts/Vazir-Thin-FD-WOL-UI.woff") format("woff");
+  font-weight: 100;
+  font-display: swap;
 }
 @font-face {
-    font-family: $font-family;
-    src: url('./assets/fonts/Vazir-Light-FD-WOL-UI.woff2') format('woff2'), url('./assets/fonts/Vazir-Light-FD-WOL-UI.woff') format('woff');
-    font-weight: 300;
-    font-display: swap;
+  font-family: $font-family;
+  src: url("./assets/fonts/Vazir-Light-FD-WOL-UI.woff2") format("woff2"),
+    url("./assets/fonts/Vazir-Light-FD-WOL-UI.woff") format("woff");
+  font-weight: 300;
+  font-display: swap;
 }
 @font-face {
-    font-family: $font-family;
-    src: url('./assets/fonts/Vazir-Medium-FD-WOL-UI.woff2') format('woff2'), url('./assets/fonts/Vazir-Medium-FD-WOL-UI.woff') format('woff');
-    font-weight: 500;
-    font-display: swap;
+  font-family: $font-family;
+  src: url("./assets/fonts/Vazir-Medium-FD-WOL-UI.woff2") format("woff2"),
+    url("./assets/fonts/Vazir-Medium-FD-WOL-UI.woff") format("woff");
+  font-weight: 500;
+  font-display: swap;
 }
 @font-face {
-    font-family: $font-family;
-    src: url('./assets/fonts/Vazir-Black-FD-WOL-UI.woff2') format('woff2'), url('./assets/fonts/Vazir-Black-FD-WOL-UI.woff') format('woff');
-    font-weight: 900;
-    font-display: swap;
+  font-family: $font-family;
+  src: url("./assets/fonts/Vazir-Black-FD-WOL-UI.woff2") format("woff2"),
+    url("./assets/fonts/Vazir-Black-FD-WOL-UI.woff") format("woff");
+  font-weight: 900;
+  font-display: swap;
 }
-*{
-    font-family: $font-family;
-    direction: rtl;
-    margin: 0;
-    padding: 0;
-    box-sizing: border;
+* {
+  font-family: $font-family;
+  direction: rtl;
+  margin: 0;
+  padding: 0;
+  box-sizing: border;
 }
-body{
-    font-family: $font-family;
+body {
+  font-family: $font-family;
 }
 
-ul,li,ol{
-    list-style: none;
-}
-a{
-    text-decoration: none;
-}
-
-.container{
-    max-width: 1170px;
-    margin: auto;
-    position: relative;
+ul,
+li,
+ol {
+  list-style: none;
+} 
+a {
+  text-decoration: none;
 }
 
-.row{
-    //اگر میخایم تگ سوم مقدار نداشته باشه اون رو نال میزاریم
-    @include flex(flex,center,null)
+.container {
+  max-width: 1170px;
+  margin: auto;
+  position: relative;
+}
+
+.row {
+  //اگر میخایم تگ سوم مقدار نداشته باشه اون رو نال میزاریم
+  @include flex(flex, center, null);
 }
 
 .img-responsive{
     display: block;
-    width: 100%;
-    height: 0;
+    width: 88%;
+    height: auto;
 }
 
 //menu style
 
-#nav{
-    .navbar{
-        
-         font-size:$defult-font-size +1px;
-        height: 60px;
-        @include flex(flex, space-between, null);
-        @include margin-padding(23px, 0, 24px, 0, );
+#nav {
+  .navbar {
+    font-size: $defult-font-size + 1px;
+    height: 60px;
+    @include flex(flex, space-between, null);
+    @include margin-padding(23px, 0, 24px, 0);
 
-        ul{
-            li{
-                display: inline-block;
-                line-height: 60px;
-                @include margin-padding(0, 0 ,0, 18px );
-                position: relative;
-                cursor: pointer;
-                &::after{
-                    content:'';
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-                    width: 0;
-                    height: 2px;
-                    background-color:$nav-link-hover;
-                    transition: width .5s ease;
-                }
-                &:hover::after{
-                    width: 100%;
-                }
-                a{
-                    color:$menu-link;
-                     transition: color .3s ease;
-                }
-                &:hover a{
-                    color: $nav-link-hover;
-                }
+    ul {
+      li {
+        display: inline-block;
+        line-height: 60px;
+        @include margin-padding(0, 0, 0, 18px);
+        position: relative;
+        cursor: pointer;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          width: 0;
+          height: 2px;
+          background-color: $nav-link-hover;
+          transition: width 0.5s ease;
+        }
+        &:hover::after {
+          width: 100%;
+        }
+        a {
+          color: $menu-link;
+          transition: color 0.3s ease;
+        }
+        &:hover a {
+          color: $nav-link-hover;
+        }
+      }
+    }
+    .social-icons {
+      direction: ltr;
+
+      @include margin-padding(20px, 0, 0, 0, false);
+      a {
+        color: $soical-icon;
+        transition: color 0.3s ease;
+        &:hover {
+          color: $soical-icon-hover;
+        }
+        i {
+          @include margin-padding(0, 8px, 0, 0);
+        }
+      }
+    }
+  }
+}
+
+#header {
+  header {
+    width: 100%;
+    @include margin-padding(100px, 0, 0, 0);
+    @include flex(flex, space-between, flex-start);
+
+    .right {
+        @include section-creator(flex, 67%, 67%);
+        position: relative;
+        .gear-1{
+          position: absolute;
+          top: 0;
+          right: 20px;
+          font-size: $defult-font-size +24;
+          color: rgb(93, 93, 93);
+          animation: gear-1 13s infinite linear;
+        }
+        @keyframes gear-1 {
+            100%{
+              transform: rotate(360deg)
             }
         }
-        .social-icons{
-            direction: ltr;
-            
-            @include margin-padding(20px,0  ,0 ,0 ,false );
-                a{
-                    color: $soical-icon;
-                    transition: color .3s ease;
-                    &:hover{
-                        color: $soical-icon-hover;
-                    }
-                    i{
-                        @include margin-padding(0, 8px, 0, 0, )
-                    }
-                }
+        .gear-2{
+          position: absolute;
+          top: 0;
+          right:1px;
+          font-size: $defult-font-size +5;
+          color: rgb(0, 0, 0);
+          animation: gear-2 13s infinite linear;
+        }
+        @keyframes gear-2 {
+            100%{
+              transform: rotate(-360deg)
+            }
+        }
+        .sq-1{
+          position: absolute;
+          top: 0;
+          left: 80px;
+          width: 20px;
+          height: 20px;
+          border: 4px solid #efefef; 
+          animation: sq-1 15s infinite linear
+        }
+        @keyframes sq-1 {
+            100%{
+              transform: rotate(-360deg)
+            }
+        }
 
+        .sq-2{
+          position: absolute;
+          top: 0;
+          left: 80px;
+          width: 20px;
+          height: 20px;
+          border: 4px solid #efefef; 
+          animation: sq-2 15s infinite linear
+        }
+        @keyframes sq-2 {
+            100%{
+              transform: rotate(360deg)
+            }
+        }
+        .sq-3{
+          position: absolute;
+          bottom:-30px;
+          left: 190px;
+          width: 30px;
+          height: 30px;
+          border: 4px solid #fa9363; 
+          animation: sq-3 25s infinite linear
+        }
+        @keyframes sq-3{
+            100%{
+              transform: rotate(360deg)
+            }
         }
     }
+    .left{
+        @include section-creator(flex, 32%, 32%);
+        @include margin-padding(6%, 0, 0, 0, );
+        h1{
+            font-size: $defult-font-size +15;
+            @include margin-padding(0, 0, 30px, 0, )
+        }
+    }
+  }
 }
