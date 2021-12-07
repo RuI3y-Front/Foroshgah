@@ -29,6 +29,10 @@ $soical-icon-hover: rgba(56, 5, 5, 0.533);
     flex-basis: $flexbasis;
     max-width: $maxwidth;
 }
+@mixin  border-raduis($top-left,$top-right,$bottom-right,$bottom-left) {
+  border-radius:$top-left $top-right $bottom-right $bottom-left ;
+  
+}
 @font-face {
   font-family: $font-family;
   src: url("./assets/fonts/Vazir-Regular-FD-WOL-UI.woff2") format("woff2"),
@@ -100,12 +104,16 @@ a {
 .row {
   //اگر میخایم تگ سوم مقدار نداشته باشه اون رو نال میزاریم
   @include flex(flex, center, null);
+  width: 100%;
 }
 
 .img-responsive{
     display: block;
-    width: 88%;
+    width: 83%;
     height: auto;
+}
+.mt-250{
+  margin-top: 150px;
 }
 
 //menu style
@@ -164,7 +172,7 @@ a {
     }
   }
 }
-
+//HeaderStyle
 #header {
   header {
     width: 100%;
@@ -253,4 +261,101 @@ a {
         }
     }
   }
+}
+
+//cours Style
+#course{
+  .pipe{
+
+  }
+ .row{
+   .course{
+     flex-wrap: wrap;
+     flex-direction: column;
+    @include section-creator(flex, 30% ,30% );
+    background-color: white;
+    position: relative;
+    border-bottom: 4px solid turquoise;
+    @include border-raduis(0, 0, 5px, 5px);
+    cursor: pointer;
+    @include margin-padding(0, 16px, 0, 16px, );
+    transition: .5s ease;
+    &:hover{
+      box-shadow: 0 0 13px 0px rgba(95, 95, 95, .5)
+     }
+     &:hover .teacher{
+       top: -51px;
+     }
+     &:hover .teacher-name{
+       width: 200px;
+        right: 65px;
+        font-size: $defult-font-size +1;
+      }
+    .status{
+      position: absolute;
+      font-size: $defult-font-size - 4;
+      left: 45px;
+      top: 10px;
+      background:rgba(46, 125, 222,.7 );
+      color: white;
+      @include margin-padding(2px, 6px,2px ,6px ,false );
+      @include border-raduis(2px, 2px, 2px, 2px);
+      white-space: nowrap;
+
+    }
+    .teacher{
+      position: absolute;
+      top: -35px;
+      right: 9px;
+      width: 54px;
+      height: 54px;
+      overflow: hidden;
+      @include border-raduis(100%, 100%, 100%, 100%);
+      z-index: -1;
+      transition: top 1s ease;
+
+    }
+    .teacher-name{
+      position: absolute;
+      top: -30px;
+      right: 9px;
+      font-size: $defult-font-size - 3px;
+      z-index: -2;
+      width: 0;
+      overflow: hidden;
+      white-space: nowrap;
+      transition: all .5s ease;
+
+    }
+    .thumb{
+      height: 55%
+    }
+    a{
+      @include margin-padding(10px, 10px, 10px, 10px, );
+      font-size: $defult-font-size + 2;
+      color: #313131;
+    }
+    .meta{
+      display: flex;
+      font-size: $defult-font-size - 2px ;
+      @include margin-padding(0, 10px,0 ,10px , );
+      @include margin-padding(16px, 0px,12px ,0px , false);
+      border-top: 1px solid #efefef;
+      span:nth-child(1){
+          @include margin-padding(0, 0, 0, auto, );
+          i{
+          color:#45a1ff;
+          margin-left: auto;
+          @include margin-padding(0, 0, 0, 3px, );
+
+        }
+      }
+      span:nth-child(2){
+        @include margin-padding(0, 8px, 0, 8px,false );
+        color: #167216;
+        text-shadow: 0 0 2px rgba(0, 0, 0, .5);
+      }
+    }
+  }
+ }
 }
