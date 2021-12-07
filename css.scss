@@ -1,20 +1,65 @@
 // Font Varible!! 
-$font-path:'../assets/Farsi-Digits';
-$font-family:'vazir-font';
-$font-weight:700;
+$font-path:'';
+$font-family:'vazir';
+$font-weight:700px;
 $font-style:"normal";
+$defult-font-size:16px;
+$menu-link:rgb(46,46,46);
+$nav-link-hover:rgb(54,114,228);
+$soical-icon:#5458 ;
+$soical-icon-hover:rgba(56, 5, 5, 0.533);
+// Mixins
+@mixin flex($flex:flex,$position-x:center,$position-y:center) {
+        //مقادیر پیش فرض گرفته 
+    display: $flex;
+    justify-content: $position-x;
+    align-items: $position-y;
+}
+// درست کردن مقدار پدینگ و مارچین هر دو باهم 
+@mixin margin-padding($top,$right,$bottom,$left,$margin: true) {
+   @if($margin){
+        margin: $top $right $bottom $left;
+   }
+   @else{
+       padding: $top $right $bottom $left;;
+   }
+}
 @font-face {
     font-family: $font-family;
-    src: url(#{$font-path}/Vazir-Light-FD-UI.woff2) format("woff2"),
-    url(#{$font-path}/Vazir-Light-FD-UI.woff) format('woff'),
-    url(#{$font-path}/Vazir-Regular-FD-UI.woff2) format('woff2'),
-    url(#{$font-path}/Vazir-Regular-FD-UI.woff1) format('woff1'),
-    url(#{$font-path}/Vazir-Thin-FD-UI.woff2) format('woff2'),
-    url(#{$font-path}/Vazir-Thin-FD-UI.woff) format('woff');
-    font-weight: $font-weight;
-    font-style: $font-style;
+    src: url('./assets/fonts/Vazir-Regular-FD-WOL-UI.woff2') format('woff2'), url('./assets/fonts/Vazir-Regular-FD-WOL-UI.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
 }
-
+@font-face {
+    font-family: $font-family;
+    src: url('./assets/fonts/Vazir-Bold-FD-WOL-UI.woff2') format('woff2'), url('./assets/fonts/Vazir-Bold-FD-WOL-UI.woff') format('woff');
+    font-weight: bold;
+    font-display: swap;
+}
+@font-face {
+    font-family: $font-family;
+    src: url('./assets/fonts/Vazir-Thin-FD-WOL-UI.woff2') format('woff2'), url('./assets/fonts/Vazir-Thin-FD-WOL-UI.woff') format('woff');
+    font-weight: 100;
+    font-display: swap;
+}
+@font-face {
+    font-family: $font-family;
+    src: url('./assets/fonts/Vazir-Light-FD-WOL-UI.woff2') format('woff2'), url('./assets/fonts/Vazir-Light-FD-WOL-UI.woff') format('woff');
+    font-weight: 300;
+    font-display: swap;
+}
+@font-face {
+    font-family: $font-family;
+    src: url('./assets/fonts/Vazir-Medium-FD-WOL-UI.woff2') format('woff2'), url('./assets/fonts/Vazir-Medium-FD-WOL-UI.woff') format('woff');
+    font-weight: 500;
+    font-display: swap;
+}
+@font-face {
+    font-family: $font-family;
+    src: url('./assets/fonts/Vazir-Black-FD-WOL-UI.woff2') format('woff2'), url('./assets/fonts/Vazir-Black-FD-WOL-UI.woff') format('woff');
+    font-weight: 900;
+    font-display: swap;
+}
 *{
     font-family: $font-family;
     direction: rtl;
@@ -31,4 +76,80 @@ ul,li,ol{
 }
 a{
     text-decoration: none;
+}
+
+.container{
+    max-width: 1170px;
+    margin: auto;
+    position: relative;
+}
+
+.row{
+    //اگر میخایم تگ سوم مقدار نداشته باشه اون رو نال میزاریم
+    @include flex(flex,center,null)
+}
+
+.img-responsive{
+    display: block;
+    width: 100%;
+    height: 0;
+}
+
+//menu style
+
+#nav{
+    .navbar{
+        
+         font-size:$defult-font-size +1px;
+        height: 60px;
+        @include flex(flex, space-between, null);
+        @include margin-padding(23px, 0, 24px, 0, );
+
+        ul{
+            li{
+                display: inline-block;
+                line-height: 60px;
+                @include margin-padding(0, 0 ,0, 18px );
+                position: relative;
+                cursor: pointer;
+                &::after{
+                    content:'';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    width: 0;
+                    height: 2px;
+                    background-color:$nav-link-hover;
+                    transition: width .5s ease;
+                }
+                &:hover::after{
+                    width: 100%;
+                }
+                a{
+                    color:$menu-link;
+                     transition: color .3s ease;
+                }
+                &:hover a{
+                    color: $nav-link-hover;
+                }
+            }
+        }
+        .social-icons{
+            direction: ltr;
+            
+            @include margin-padding(20px,0  ,0 ,0 ,false );
+                a{
+                    color: $soical-icon;
+                    transition: color .3s ease;
+                    &:hover{
+                        color: $soical-icon-hover;
+                    }
+                    i{
+                        @include margin-padding(0, 8px, 0, 0, )
+                    }
+                }
+
+        }
+    }
 }
