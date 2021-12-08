@@ -5,9 +5,9 @@ $font-weight: 700px;
 $font-style: "normal";
 $defult-font-size: 16px;
 $menu-link: rgb(46, 46, 46);
-$nav-link-hover: rgb(54, 114, 228);
+$nav-link-hover: rgb(248, 110, 29);
 $soical-icon: #5458;
-$soical-icon-hover: rgba(56, 5, 5, 0.533);
+$soical-icon-hover: rgba(218, 105, 0, 0.533);
 
 // Mixins
 @mixin flex($flex: flex, $position-x: center, $position-y: center) {
@@ -33,48 +33,49 @@ $soical-icon-hover: rgba(56, 5, 5, 0.533);
   border-radius:$top-left $top-right $bottom-right $bottom-left ;
   
 }
-@font-face {
-  font-family: $font-family;
-  src: url("./assets/fonts/Vazir-Regular-FD-WOL-UI.woff2") format("woff2"),
-    url("./assets/fonts/Vazir-Regular-FD-WOL-UI.woff") format("woff");
-  font-weight: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: $font-family;
-  src: url("./assets/fonts/Vazir-Bold-FD-WOL-UI.woff2") format("woff2"),
-    url("./assets/fonts/Vazir-Bold-FD-WOL-UI.woff") format("woff");
-  font-weight: bold;
-  font-display: swap;
-}
-@font-face {
-  font-family: $font-family;
-  src: url("./assets/fonts/Vazir-Thin-FD-WOL-UI.woff2") format("woff2"),
-    url("./assets/fonts/Vazir-Thin-FD-WOL-UI.woff") format("woff");
-  font-weight: 100;
-  font-display: swap;
-}
-@font-face {
-  font-family: $font-family;
-  src: url("./assets/fonts/Vazir-Light-FD-WOL-UI.woff2") format("woff2"),
-    url("./assets/fonts/Vazir-Light-FD-WOL-UI.woff") format("woff");
-  font-weight: 300;
-  font-display: swap;
-}
-@font-face {
-  font-family: $font-family;
-  src: url("./assets/fonts/Vazir-Medium-FD-WOL-UI.woff2") format("woff2"),
-    url("./assets/fonts/Vazir-Medium-FD-WOL-UI.woff") format("woff");
-  font-weight: 500;
-  font-display: swap;
-}
-@font-face {
-  font-family: $font-family;
-  src: url("./assets/fonts/Vazir-Black-FD-WOL-UI.woff2") format("woff2"),
-    url("./assets/fonts/Vazir-Black-FD-WOL-UI.woff") format("woff");
-  font-weight: 900;
-  font-display: swap;
-}
+
+// @font-face {
+//   font-family: $font-family;
+//   src: url("./assets/fonts/Vazir-Regular-FD-WOL-UI.woff2") format("woff2"),
+//     url("./assets/fonts/Vazir-Regular-FD-WOL-UI.woff") format("woff");
+//   font-weight: normal;
+//   font-display: swap;
+// }
+// @font-face {
+//   font-family: $font-family;
+//   src: url("./assets/fonts/Vazir-Bold-FD-WOL-UI.woff2") format("woff2"),
+//     url("./assets/fonts/Vazir-Bold-FD-WOL-UI.woff") format("woff");
+//   font-weight: bold;
+//   font-display: swap;
+// }
+// @font-face {
+//   font-family: $font-family;
+//   src: url("./assets/fonts/Vazir-Thin-FD-WOL-UI.woff2") format("woff2"),
+//     url("./assets/fonts/Vazir-Thin-FD-WOL-UI.woff") format("woff");
+//   font-weight: 100;
+//   font-display: swap;
+// }
+// @font-face {
+//   font-family: $font-family;
+//   src: url("./assets/fonts/Vazir-Light-FD-WOL-UI.woff2") format("woff2"),
+//     url("./assets/fonts/Vazir-Light-FD-WOL-UI.woff") format("woff");
+//   font-weight: 300;
+//   font-display: swap;
+// }
+// @font-face {
+//   font-family: $font-family;
+//   src: url("./assets/fonts/Vazir-Medium-FD-WOL-UI.woff2") format("woff2"),
+//     url("./assets/fonts/Vazir-Medium-FD-WOL-UI.woff") format("woff");
+//   font-weight: 500;
+//   font-display: swap;
+// }
+// @font-face {
+//   font-family: $font-family;
+//   src: url("./assets/fonts/Vazir-Black-FD-WOL-UI.woff2") format("woff2"),
+//     url("./assets/fonts/Vazir-Black-FD-WOL-UI.woff") format("woff");
+//   font-weight: 900;
+//   font-display: swap;
+// }
 * {
   font-family: $font-family;
   direction: rtl;
@@ -84,6 +85,7 @@ $soical-icon-hover: rgba(56, 5, 5, 0.533);
 }
 body {
   font-family: $font-family;
+  overflow-x: hidden;
 }
 
 ul,
@@ -109,7 +111,7 @@ a {
 
 .img-responsive{
     display: block;
-    width: 83%;
+    width: 100%;
     height: auto;
 }
 .mt-250{
@@ -157,7 +159,7 @@ a {
     }
     .social-icons {
       direction: ltr;
-
+      cursor: pointer;
       @include margin-padding(20px, 0, 0, 0, false);
       a {
         color: $soical-icon;
@@ -169,9 +171,20 @@ a {
           @include margin-padding(0, 8px, 0, 0);
         }
       }
+      #cart-content{
+
+        th{
+          border-bottom: 1px solid #eee;
+          @include margin-padding(15px ,20px ,15px ,25px , false)
+        }
+      }
+     
     }
+   
   }
+ 
 }
+
 //HeaderStyle
 #header {
   header {
@@ -273,7 +286,7 @@ a {
     height: 370px;
     background-color: rgba(51, 51, 51, 0.08);
     top: 83px;
-    left: -103px;
+    left: -143px;
     @include border-raduis(0, 250px, 250px, 0);
   }
  .row{
@@ -287,8 +300,7 @@ a {
     border-bottom: 4px solid turquoise;
     @include border-raduis(0, 0, 5px, 5px);
     cursor: pointer;
-    
-    @include margin-padding(35px, 16px, 0, 16px, );
+    @include margin-padding(20px, 16px, 0, 16px, );
     transition: .5s ease;
     &:hover{
       box-shadow: 0 0 13px 0px rgba(95, 95, 95, .5)
@@ -337,7 +349,7 @@ a {
 
     }
     .thumb{
-      height: 55%
+      height: 60%
     }
     a{
       @include margin-padding(10px, 10px, 10px, 10px, );
@@ -366,7 +378,7 @@ a {
       }
     }
   }
-  .button {
+  .add-to-cart {
     display: inline-block;
     border-radius: 4px;
     background-color: #f4511e;
@@ -408,3 +420,36 @@ a {
   }
  }
 }
+
+//path Style
+.path-div{
+  
+    @include flex(flex , space-between,null);
+    margin-bottom: 100px;
+  .right-side{
+    @include section-creator(flex, 50%,50% );
+    @include margin-padding(0, 40px, 0,0  );
+    #img{
+      object-fit: cover;
+    }
+  }
+  .left-side{
+    @include section-creator(flex, 45%,45% );
+    .path-title{
+      @include flex(flex, center, center);
+      flex-direction: column;
+      h2{
+        font-size: $defult-font-size +10px;
+        margin-bottom: 32px;
+        color: #46474d;
+      }
+      p{
+        font-size: $defult-font-size +2;
+        line-height: 33px;
+        color: rgb(93, 93, 93);
+      }
+    }
+  }
+}
+
+
