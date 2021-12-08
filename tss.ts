@@ -1,37 +1,40 @@
-const courses:HTMLElement = document.querySelector(".row");
-const shopingCart:HTMLElement = document.querySelector("#cart-content tbody");
+const courses: HTMLElement = document.querySelector(".row");
+const shopingCart: HTMLElement = document.querySelector("#cart-content tbody");
 eventListeners();
-function eventListeners() {
-  courses.addEventListener("click", buyCourse);
+function eventListeners(): void {
+  courses.addEventListener("click", buyCourse),
+  shopingCart.addEventListener('click', removeCourse)
+
+  document.addEventListener('DOMContentLoaded', showCoursOnload)
+
 }
 
-function buyCourse(e:any) {
-   
+function buyCourse(e: any): void {
   e.preventDefault();
   if (e.target.classList.contains("add-to-cart")) {
-    const cours:HTMLElement = e.target.parentElement;
+    const cours: HTMLElement = e.target.parentElement;
     getCourseInfo(cours);
-    
-  }else
-  alert('این ایتم در دسترس نیست')
+  } else alert("این ایتم در دسترس نیست");
 }
-interface cursinf{
-    imge:string,
-    title:string,
-    price:string
+interface cursinf {
+  imge: string;
+  title: string;
+  price: string;
+  id: number;
 }
-function getCourseInfo(cours) {
-     debugger
-  const coursInfo:cursinf = {
+function getCourseInfo(cours: any) {
+  let coursInfo: cursinf = {
     imge: cours.querySelector(".thumb").src,
     title: cours.querySelector(".proje-name").textContent,
     price: cours.querySelector(".price").textContent,
+    id: cours.querySelector("button").getAttribute("data-id"),
   };
 
   addToCart(coursInfo);
 }
-function addToCart(coursInfo) {
-  let row = document.createElement("tr");
+
+function addToCart(coursInfo: cursinf) {
+  let row: HTMLElement = document.createElement("tr");
   row.innerHTML = `
     <tr>
     <td>
@@ -43,8 +46,86 @@ function addToCart(coursInfo) {
     <td>
         ${coursInfo.price}
     </td>
+    <td class = "remove" style="width: 100px; height: 70px;">
+    <a  class = "remove" href = "#" data-id ="${coursInfo.id}">X</a>
+</td> 
     
 </tr> 
     `;
   shopingCart.appendChild(row);
+  svToLocalStorage(coursInfo);
+}
+
+function svToLocalStorage(coursInfo) {
+  let courses = getFromsStorage();
+  courses.push(coursInfo);
+
+  localStorage.setItem('coursess' ,JSON.stringify(courses));
+}
+
+
+
+function getFromsStorage() {
+  let courses:any[]
+
+  if (localStorage.getItem("coursess")) {
+    courses = JSON.parse(localStorage.getItem("coursess"));
+  } else {
+    courses = [];
+  }
+  return courses;
+}
+// remove course from the DOM
+function removeCourse(e){
+    let course , courseId;
+
+    if(e.target.classList.contains('remove')){
+        e.target.parentElement.parentElement.remove()
+        course =  e.target.parentElement.parentElement
+        courseId = course.querySelector('a').getAttribute('data-id')
+    }
+    console.log(e.target.classList.contains('remove'));
+    console.log(courseId);
+    
+    // remove course from LS
+    removeCourseLS(courseId)
+}
+function removeCourseLS (id){
+    let coursesLs=getFromsStorage()
+    coursesLs.forEach((course,index) =>{
+        if (course.id ===id){
+            coursesLs.splice(index,1)
+        }
+    })
+    localStorage.setItem('coursess',JSON.stringify(coursesLs))
+}
+
+
+
+
+function showCoursOnload() {
+  let coursesLS = getFromsStorage();
+
+  coursesLS.forEach((coursInfo) => {
+    let row = document.createElement("tr");
+
+    row.innerHTML = `
+    <tr>
+    <td>
+        <img  src = "${coursInfo.imge}" width="100px">
+    </td>
+    <td>
+        ${coursInfo.title}
+    </td>
+    <td>
+        ${coursInfo.price}
+    </td>
+    <td>
+    <a class = "remove" href = "#" data-id ="${coursInfo.id}">X</a>
+</td> 
+    
+</tr> 
+    `;
+    shopingCart.appendChild(row);
+  });
 }

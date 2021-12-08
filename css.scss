@@ -171,18 +171,35 @@ a {
           @include margin-padding(0, 8px, 0, 0);
         }
       }
+    }
+    .tag-a{
+      position: absolute;
+      left: 100px;
       #cart-content{
 
         th{
           border-bottom: 1px solid #eee;
-          @include margin-padding(15px ,20px ,15px ,25px , false)
+          @include margin-padding(15px ,20px ,15px ,25px , false);
+          
+        }
+        td{
+          padding: 12px 15px;
+    text-align: right;
+    border-bottom: 1px solid #E1E1E1;
+    a{
+            padding: 10px;
+            cursor: pointer;
+            z-index: 40;
+            background-color: green;
+            overflow: hidden;
+            border-radius: 100%;
+          }
         }
       }
-     
     }
-   
   }
  
+  
 }
 
 //HeaderStyle
