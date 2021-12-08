@@ -53,8 +53,6 @@ function removeCourse(e) {
         course = e.target.parentElement.parentElement;
         courseId = course.querySelector('a').getAttribute('data-id');
     }
-    console.log(e.target.classList.contains('remove'));
-    console.log(courseId);
     // remove course from LS
     removeCourseLS(courseId);
 }

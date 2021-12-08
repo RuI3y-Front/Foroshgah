@@ -22,7 +22,7 @@ interface cursinf {
   price: string;
   id: number;
 }
-function getCourseInfo(cours: any) {
+function getCourseInfo(cours:any) {
   let coursInfo: cursinf = {
     imge: cours.querySelector(".thumb").src,
     title: cours.querySelector(".proje-name").textContent,
@@ -56,8 +56,8 @@ function addToCart(coursInfo: cursinf) {
   svToLocalStorage(coursInfo);
 }
 
-function svToLocalStorage(coursInfo) {
-  let courses = getFromsStorage();
+function svToLocalStorage(coursInfo:cursinf):void {
+  let courses:any[] = getFromsStorage();
   courses.push(coursInfo);
 
   localStorage.setItem('coursess' ,JSON.stringify(courses));
@@ -65,9 +65,8 @@ function svToLocalStorage(coursInfo) {
 
 
 
-function getFromsStorage() {
+function getFromsStorage():any[] {
   let courses:any[]
-
   if (localStorage.getItem("coursess")) {
     courses = JSON.parse(localStorage.getItem("coursess"));
   } else {
@@ -76,21 +75,17 @@ function getFromsStorage() {
   return courses;
 }
 // remove course from the DOM
-function removeCourse(e){
-    let course , courseId;
-
+function removeCourse(e:any):void{
+    let course:HTMLElement , courseId:string;
     if(e.target.classList.contains('remove')){
         e.target.parentElement.parentElement.remove()
         course =  e.target.parentElement.parentElement
         courseId = course.querySelector('a').getAttribute('data-id')
     }
-    console.log(e.target.classList.contains('remove'));
-    console.log(courseId);
-    
     // remove course from LS
     removeCourseLS(courseId)
 }
-function removeCourseLS (id){
+function removeCourseLS (id:string){
     let coursesLs=getFromsStorage()
     coursesLs.forEach((course,index) =>{
         if (course.id ===id){
