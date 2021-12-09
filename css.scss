@@ -24,14 +24,13 @@ $soical-icon-hover: rgba(218, 105, 0, 0.533);
     padding: $top $right $bottom $left;
   }
 }
-@mixin section-creator($flex:flex , $flexbasis:null,$maxwidth:null) {
-    display: $flex;
-    flex-basis: $flexbasis;
-    max-width: $maxwidth;
+@mixin section-creator($flex: flex, $flexbasis: null, $maxwidth: null) {
+  display: $flex;
+  flex-basis: $flexbasis;
+  max-width: $maxwidth;
 }
-@mixin  border-raduis($top-left,$top-right,$bottom-right,$bottom-left) {
-  border-radius:$top-left $top-right $bottom-right $bottom-left ;
-  
+@mixin border-raduis($top-left, $top-right, $bottom-right, $bottom-left) {
+  border-radius: $top-left $top-right $bottom-right $bottom-left;
 }
 
 // @font-face {
@@ -92,7 +91,7 @@ ul,
 li,
 ol {
   list-style: none;
-} 
+}
 a {
   text-decoration: none;
 }
@@ -109,12 +108,12 @@ a {
   width: 100%;
 }
 
-.img-responsive{
-    display: block;
-    width: 100%;
-    height: auto;
+.img-responsive {
+  display: block;
+  width: 100%;
+  height: auto;
 }
-.mt-250{
+.mt-250 {
   margin-top: 100px;
 }
 
@@ -172,34 +171,32 @@ a {
         }
       }
     }
-    .tag-a{
+    .tag-a {
       position: absolute;
       left: 100px;
-      &:hover .cart-info-style{
+      &:hover .cart-info-style {
         display: block;
       }
-      .cart-info-style{
-        
+      .cart-info-style {
         display: none;
         position: absolute;
         left: -28px;
-        top: 100%;
+        top: 50px;
         z-index: 1;
         background-color: rgb(236, 195, 195);
-        @include margin-padding(15px ,20px ,15px ,25px , false);
+        @include margin-padding(15px, 20px, 15px, 25px, false);
         min-height: 400px;
         min-width: 300px;
       }
-      #cart-content{
-        th{
+      #cart-content {
+        th {
           border-bottom: 1px solid #eee;
-          
         }
-        td{
+        td {
           padding: 12px 15px;
-    text-align: right;
-    border-bottom: 1px solid #E1E1E1;
-    a{
+          text-align: right;
+          border-bottom: 1px solid #e1e1e1;
+          a {
             padding: 10px;
             cursor: pointer;
             z-index: 40;
@@ -211,8 +208,6 @@ a {
       }
     }
   }
- 
-  
 }
 
 //HeaderStyle
@@ -223,94 +218,94 @@ a {
     @include flex(flex, space-between, flex-start);
 
     .right {
-        @include section-creator(flex, 67%, 67%);
-        position: relative;
-        .gear-1{
-          position: absolute;
-          top: 0;
-          right: 20px;
-          font-size: $defult-font-size +24;
-          color: rgb(93, 93, 93);
-          animation: gear-1 13s infinite linear;
+      @include section-creator(flex, 67%, 67%);
+      position: relative;
+      .gear-1 {
+        position: absolute;
+        top: 0;
+        right: 20px;
+        font-size: $defult-font-size + 24;
+        color: rgb(93, 93, 93);
+        animation: gear-1 13s infinite linear;
+      }
+      @keyframes gear-1 {
+        100% {
+          transform: rotate(360deg);
         }
-        @keyframes gear-1 {
-            100%{
-              transform: rotate(360deg)
-            }
+      }
+      .gear-2 {
+        position: absolute;
+        top: 0;
+        right: 1px;
+        font-size: $defult-font-size + 5;
+        color: rgb(0, 0, 0);
+        animation: gear-2 13s infinite linear;
+      }
+      @keyframes gear-2 {
+        100% {
+          transform: rotate(-360deg);
         }
-        .gear-2{
-          position: absolute;
-          top: 0;
-          right:1px;
-          font-size: $defult-font-size +5;
-          color: rgb(0, 0, 0);
-          animation: gear-2 13s infinite linear;
+      }
+      .sq-1 {
+        position: absolute;
+        top: 0;
+        left: 80px;
+        width: 20px;
+        height: 20px;
+        border: 4px solid #efefef;
+        animation: sq-1 15s infinite linear;
+      }
+      @keyframes sq-1 {
+        100% {
+          transform: rotate(-360deg);
         }
-        @keyframes gear-2 {
-            100%{
-              transform: rotate(-360deg)
-            }
-        }
-        .sq-1{
-          position: absolute;
-          top: 0;
-          left: 80px;
-          width: 20px;
-          height: 20px;
-          border: 4px solid #efefef; 
-          animation: sq-1 15s infinite linear
-        }
-        @keyframes sq-1 {
-            100%{
-              transform: rotate(-360deg)
-            }
-        }
+      }
 
-        .sq-2{
-          position: absolute;
-          top: 0;
-          left: 80px;
-          width: 20px;
-          height: 20px;
-          border: 4px solid #efefef; 
-          animation: sq-2 15s infinite linear
+      .sq-2 {
+        position: absolute;
+        top: 0;
+        left: 80px;
+        width: 20px;
+        height: 20px;
+        border: 4px solid #efefef;
+        animation: sq-2 15s infinite linear;
+      }
+      @keyframes sq-2 {
+        100% {
+          transform: rotate(360deg);
         }
-        @keyframes sq-2 {
-            100%{
-              transform: rotate(360deg)
-            }
+      }
+      .sq-3 {
+        position: absolute;
+        bottom: -30px;
+        left: 190px;
+        width: 30px;
+        height: 30px;
+        border: 4px solid #fa9363;
+        animation: sq-3 25s infinite linear;
+        overflow: hidden;
+      }
+      @keyframes sq-3 {
+        100% {
+          transform: rotate(360deg);
         }
-        .sq-3{
-          position: absolute;
-          bottom:-30px;
-          left: 190px;
-          width: 30px;
-          height: 30px;
-          border: 4px solid #fa9363; 
-          animation: sq-3 25s infinite linear;
-          overflow: hidden;
-        }
-        @keyframes sq-3{
-            100%{
-              transform: rotate(360deg)
-            }
-        }
+      }
     }
-    .left{
-        @include section-creator(flex, 32%, 32%);
-        @include margin-padding(6%, 0, 0, 0, );
-        h1{
-            font-size: $defult-font-size +15;
-            @include margin-padding(0, 0, 30px, 0, )
-        }
+    .left {
+      @include section-creator(flex, 32%, 32%);
+      @include margin-padding(6%, 0, 0, 0);
+      h1 {
+        font-size: $defult-font-size + 15;
+        @include margin-padding(0, 0, 30px, 0);
+      }
     }
   }
 }
 
 //cours Style
-#course{
+#course {
   position: relative;
-  .pipe{
+  .pipe {
     position: absolute;
     width: 1300px;
     height: 370px;
@@ -319,162 +314,157 @@ a {
     left: -143px;
     @include border-raduis(0, 250px, 250px, 0);
   }
- .row{
-  flex-wrap: wrap;
+  .row {
+    flex-wrap: wrap;
 
-   .course{
-     flex-direction: column;
-    @include section-creator(flex, 21% ,21% );
-    background-color: white;
-    position: relative;
-    border-bottom: 4px solid turquoise;
-    @include border-raduis(0, 0, 5px, 5px);
-    cursor: pointer;
-    @include margin-padding(20px, 16px, 0, 16px, );
-    transition: .5s ease;
-    &:hover{
-      box-shadow: 0 0 13px 0px rgba(95, 95, 95, .5)
-     }
-     &:hover .teacher{
-       top: -51px;
-     }
-     &:hover .teacher-name{
-       width: 50%;
-        right: 65px;
-        font-size: $defult-font-size +1;
+    .course {
+      flex-direction: column;
+      @include section-creator(flex, 21%, 21%);
+      background-color: white;
+      position: relative;
+      border-bottom: 4px solid turquoise;
+      @include border-raduis(0, 0, 5px, 5px);
+      cursor: pointer;
+      @include margin-padding(20px, 16px, 0, 16px);
+      transition: 0.5s ease;
+      &:hover {
+        box-shadow: 0 0 13px 0px rgba(95, 95, 95, 0.5);
       }
-    .status{
-      font-size: $defult-font-size - 4;
-      left: 45px;
-      top: 10px;
-      background:rgba(46, 125, 222,.7 );
-      color: white;
-      @include margin-padding(2px, 6px,2px ,6px ,false );
-      @include border-raduis(2px, 2px, 2px, 2px);
-      white-space: nowrap;
-
-    }
-    .teacher{
-      position: absolute;
-      top: -35px;
-      right: 9px;
-      width: 54px;
-      height: 54px;
-      overflow: hidden;
-      @include border-raduis(100%, 100%, 100%, 100%);
-      z-index: -1;
-      transition: top 1s ease;
-
-    }
-    .teacher-name{
-      position: absolute;
-      top: -30px;
-      right: 9px;
-      font-size: $defult-font-size - 3px;
-      z-index: -2;
-      width: 0;
-      overflow: hidden;
-      white-space: nowrap;
-      transition: all .5s ease;
-
-    }
-    .thumb{
-      height: 60%
-    }
-    a{
-      @include margin-padding(10px, 10px, 10px, 10px, );
-      font-size: $defult-font-size + 2;
-      color: #313131;
-    }
-    .meta{
-      display: flex;
-      font-size: $defult-font-size - 2px ;
-      @include margin-padding(0, 10px,0 ,10px , );
-      @include margin-padding(16px, 0px,12px ,0px , false);
-      border-top: 1px solid #efefef;
-      span:nth-child(1){
-          @include margin-padding(0, 0, 0, auto, );
-          i{
-          color:#45a1ff;
-          margin-left: auto;
-          @include margin-padding(0, 0, 0, 3px, );
-
+      &:hover .teacher {
+        top: -51px;
+      }
+      &:hover .teacher-name {
+        width: 50%;
+        right: 65px;
+        font-size: $defult-font-size + 1;
+      }
+      .status {
+        font-size: $defult-font-size - 4;
+        left: 45px;
+        top: 10px;
+        background: rgba(46, 125, 222, 0.7);
+        color: white;
+        @include margin-padding(2px, 6px, 2px, 6px, false);
+        @include border-raduis(2px, 2px, 2px, 2px);
+        white-space: nowrap;
+      }
+      .teacher {
+        position: absolute;
+        top: -35px;
+        right: 9px;
+        width: 54px;
+        height: 54px;
+        overflow: hidden;
+        @include border-raduis(100%, 100%, 100%, 100%);
+        z-index: -1;
+        transition: top 1s ease;
+      }
+      .teacher-name {
+        position: absolute;
+        top: -30px;
+        right: 9px;
+        font-size: $defult-font-size - 3px;
+        z-index: -2;
+        width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        transition: all 0.5s ease;
+      }
+      .thumb {
+        height: 60%;
+      }
+      a {
+        @include margin-padding(10px, 10px, 10px, 10px);
+        font-size: $defult-font-size + 2;
+        color: #313131;
+      }
+      .meta {
+        display: flex;
+        font-size: $defult-font-size - 2px;
+        @include margin-padding(0, 10px, 0, 10px);
+        @include margin-padding(16px, 0px, 12px, 0px, false);
+        border-top: 1px solid #efefef;
+        span:nth-child(1) {
+          @include margin-padding(0, 0, 0, auto);
+          i {
+            color: #45a1ff;
+            margin-left: auto;
+            @include margin-padding(0, 0, 0, 3px);
+          }
+        }
+        span:nth-child(2) {
+          @include margin-padding(0, 8px, 0, 8px, false);
+          color: #167216;
+          text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
         }
       }
-      span:nth-child(2){
-        @include margin-padding(0, 8px, 0, 8px,false );
-        color: #167216;
-        text-shadow: 0 0 2px rgba(0, 0, 0, .5);
-      }
+    }
+    .add-to-cart {
+      display: inline-block;
+      border-radius: 4px;
+      background-color: #f4511e;
+      border: none;
+      color: #ffffff;
+      text-align: center;
+      font-size: $defult-font-size;
+      @include margin-padding(10px, 20px, 10px, 20px, false);
+      width: 120px;
+      transition: all 0.5s;
+      cursor: pointer;
+      @include margin-padding(20px, 60px, 0, 0);
+      white-space: nowrap;
+    }
+
+    .button span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+
+    .button span:after {
+      content: "\00bb";
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -10px;
+      transition: 0.5s;
+    }
+
+    .button:hover span {
+      padding-right: 15px;
+    }
+
+    .button:hover span:after {
+      opacity: 1;
+      right: 0;
     }
   }
-  .add-to-cart {
-    display: inline-block;
-    border-radius: 4px;
-    background-color: #f4511e;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size:$defult-font-size;
-    @include margin-padding(10px, 20px, 10px, 20px, false);
-    width: 120px;
-    transition: all 0.5s;
-    cursor: pointer;
-    @include margin-padding(20px, 60px, 0, 0, );
-    white-space: nowrap;
-  }
-  
-  .button span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-  }
-  
-  .button span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -10px;
-    transition: 0.5s;
-  }
-  
-  .button:hover span {
-    padding-right: 15px;
-  }
-  
-  .button:hover span:after {
-    opacity: 1;
-    right: 0;
-  }
- }
 }
 
 //path Style
-.path-div{
-  
-    @include flex(flex , space-between,null);
-    margin-bottom: 100px;
-  .right-side{
-    @include section-creator(flex, 50%,50% );
-    @include margin-padding(0, 40px, 0,0  );
-    #img{
+.path-div {
+  @include flex(flex, space-between, null);
+  margin-bottom: 100px;
+  .right-side {
+    @include section-creator(flex, 50%, 50%);
+    @include margin-padding(0, 40px, 0, 0);
+    #img {
       object-fit: cover;
     }
   }
-  .left-side{
-    @include section-creator(flex, 45%,45% );
-    .path-title{
+  .left-side {
+    @include section-creator(flex, 45%, 45%);
+    .path-title {
       @include flex(flex, center, center);
       flex-direction: column;
-      h2{
-        font-size: $defult-font-size +10px;
+      h2 {
+        font-size: $defult-font-size + 10px;
         margin-bottom: 32px;
         color: #46474d;
       }
-      p{
-        font-size: $defult-font-size +2;
+      p {
+        font-size: $defult-font-size + 2;
         line-height: 33px;
         color: rgb(93, 93, 93);
       }
@@ -482,4 +472,186 @@ a {
   }
 }
 
+//Topic
 
+#topic {
+  &::after,
+  &::before{
+    position: relative;
+    position: absolute;
+    background: rgba(144 ,124,255,0.08);
+    width: 200px;
+    content: '';
+    bottom: 90px;
+    left: -250px;
+    height: 250px;
+    transform: skewX(10deg);
+    @include border-raduis(0, 20px, 50px , 0)
+  }
+  &::after{
+    bottom: 150px;
+    left: -260px;
+  }
+  .topic-title {
+    font-size: $defult-font-size + 5px;
+    @include margin-padding(0, 0, 30px, 0);
+    border-right: 5px solid red;
+    @include margin-padding(0, 10px, 0, 0, false);
+  }
+  .topic {
+    @include flex(flex, space-between, null);
+    @include margin-padding(0, 0, 20px, 0);
+
+    .card {
+      @include section-creator(flex, 49%, 49%);
+      border: 1px solid #efefef;
+      overflow: hidden;
+      @include border-raduis(3px, 3px, 3px, 3px);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      &:hover .topic-img::after {
+        opacity: 0.6;
+      }
+
+      .topic-img {
+        @include section-creator(flex, 30%, 30%);
+        position: relative;
+        &::after {
+          content: "";
+          width: 100%;
+          height: 100%;
+          background-color: #000;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          opacity: 0;
+          transition: opacity 0.5s ease;
+          overflow: hidden;
+        }
+      }
+      .topic-detials {
+        position: relative;
+        @include section-creator(flex, 70%, 70%);
+        flex-direction: column;
+        @include margin-padding(22px, 22px, 22px, 22px, false);
+        &::after {
+          content: "";
+          width: 40px;
+          height: 105%;
+          background-color: white;
+          position: absolute;
+          top: -5px;
+          right: -24px;
+          transform: rotate(8deg);
+        }
+        a {
+          font-size: $defult-font-size + 3px;
+        }
+        .meta {
+          font-size: $defult-font-size - 2px;
+          @include margin-padding(15px, 0, 4px, 0);
+          color: #616161;
+          span {
+            @include margin-padding(0, 0, 0, 15px);
+          }
+        }
+        p {
+          font-size: $defult-font-size + 1px;
+          @include margin-padding(20px, 0, 0, 0);
+          line-height: 30px;
+          color: #757575;
+        }
+      }
+    }
+  }
+}
+
+//Footer Style
+
+#footer{
+  @include margin-padding(80px, 0, 0, 0, false);
+  background-color: #35373a;
+  .footer{
+    .side-1{
+      @include section-creator(flex, 30%, 30%);
+      flex-direction: column;
+      h5{
+        color: honeydew;
+        @include margin-padding(0, 0, 32px, 0);
+
+      }
+      ul{
+        font-size: $defult-font-size - 1px;
+        @include margin-padding(0, 0, 40px, 0);
+        li{
+            @include margin-padding(0, 0, 18px, 0 );
+            color: #cacaca ;
+            i{
+              @include margin-padding(0, 0, 0, 12px, )
+            }
+        }
+
+      }
+    }
+    .side-2{
+      @include section-creator(flex, 30%, 30%);
+      // @include flex(flex, center, flex-start);
+      ul{
+        font-size: $defult-font-size -6px;
+        @include margin-padding(0,0 ,0 ,40px );
+        li{
+          @include margin-padding(0, 0,16px,0 , );
+          a{
+            color: #e1e1e1;
+            transition: color 0.5s ease;
+            &:hover{
+              color: yellow;
+            }
+          }
+        }
+      }
+    }
+    .side-3{
+      @include section-creator(flex, 30%, 30%);
+      flex-direction: column;
+        p{
+          color: yellow;
+          @include margin-padding(0, 0, 26px, 0 );
+          font-size: $defult-font-size ;
+          text-align: center;
+        }
+        form{
+          position: relative;
+          .email{
+           width: 100%;
+           height:9px;
+           @include margin-padding(10px, 10px, 10px, 10px, false);
+           border: 0;
+           @include border-raduis(4px, 4px, 4px, 4px);
+           outline: 0;
+          }
+          .submit{
+            position: absolute;
+            top: 9px;
+            left: 4px;
+            border: 0;
+            background-color: transparent;
+            outline: 0;
+            cursor: pointer;
+            transition: color .5s ease;
+            &:hover{
+              color: rgb(67, 130, 248)
+            }
+          }
+        }
+    }
+  
+  }
+  .copy-right{
+    background-color: #2b2d30;
+    text-align: center;
+    @include margin-padding(30px, 0, 30px, 0, false);
+    color: #cacaca;
+    font-size: $defult-font-size + 4px;
+  }
+}
