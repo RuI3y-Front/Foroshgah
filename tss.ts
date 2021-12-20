@@ -1,3 +1,4 @@
+
 const courses: HTMLElement = document.querySelector(".row");
 const shopingCart: HTMLElement = document.querySelector("#cart-content tbody");
 eventListeners();
@@ -107,7 +108,7 @@ function showCoursOnload() {
     row.innerHTML = `
     <tr>
     <td>
-        <img  src = "${coursInfo.imge}" width="100px">
+        <img  src = "${coursInfo.imge}" max-width="100px">
     </td>
     <td>
         ${coursInfo.title}
@@ -171,3 +172,21 @@ nav1.addEventListener('click',toggleNav);
 nav2.addEventListener('click',toggleNav);
 nav3.addEventListener('click',toggleNav);
 nav4.addEventListener('click',toggleNav);
+
+
+//Theme Site
+const toggleSwitch = document.querySelector('input[type="checkbox"]');
+
+function switchTheme(event){
+  if (event.target.checked){
+    document.documentElement.setAttribute('data-theme','dark');
+   
+  } else{
+    document.documentElement.setAttribute('data-theme','light');
+
+  }
+}
+
+//Event Listener
+toggleSwitch.addEventListener('change',switchTheme);
+

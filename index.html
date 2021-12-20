@@ -6,80 +6,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/compiled-tailwind.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
       integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
       crossorigin="anonymous"
     />
     <title>سایت</title>
     <link rel="stylesheet" href="assets/css/css.min.css" />
+    <link href="/dist/style.css" />
   </head>
   <body>
     <div class="container" id="nav">
-      
-      <div class="overlay" id="overlay"> 
-      <nav>
-        <ul>
-         <li id="nav-1"><a href="">خانه</a></li>
-         <li id="nav-2"><a href="">طراحی سایت</a></li>
-         <li id="nav-3"><a href="">تماس با ما</a></li>
-         <li id="nav-4"><a href="#topic">درباره ما</a></li>
-        </ul>
-      </nav>
+      <div class="overlay lg:hidden md:inline-block" id="overlay">
+        <nav>
+          <ul>
+            <li id="nav-1"><a href="">خانه</a></li>
+            <li id="nav-2"><a href="">طراحی سایت</a></li>
+            <li id="nav-3"><a href="">تماس با ما</a></li>
+            <li id="nav-4"><a href="#topic">درباره ما</a></li>
+          </ul>
+        </nav>
+      </div>
 
-      </div>
       <nav class="navbar">
-       <!-- Meno Bars -->
-       <div class="menu-bars" id="menu-bars">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </div>
+        <!-- Meno Bars -->
+        <div
+          class="menu-bars  md:inline-block lg:hidden sm:inline-block "
+          id="menu-bars"
+        >
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
 
         <!-- Meno Bars Not Responsive -->
-        <ul>
+        <ul class="ul-first-menu md:hidden sm:hidden hidden lg:inline-block">
           <li><a href="#">خانه</a></li>
           <li><a href="#">طراحی سایت</a></li>
           <li><a href="#">تماس باما</a></li>
           <li><a href="#">درباره ما</a></li>
         </ul>
 
-        <span class="social-icons">
-          <a href="#"><i class="fab fa-telegram-plane"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fas fa-rss"></i></a>
-        </span>
-          <a href="#" class="tag-a">
+        <ul class="social-icons  flex-col lg:flex-row md:flex-row ">
+          <li href="#">
+            <i class="sm:mr-2 md:mr-3 lg:mr-4 fab fa-telegram-plane"></i>
+          </li>
+          <li href="#">
+            <i class="sm:mr-2 md:mr-3 lg:mr-4 fab fa-instagram"></i>
+          </li>
+          <li href="#">
+            <i class="sm:mr-2 md:mr-3 lg:mr-4 fab fa-twitter"></i>
+          </li>
+          <li href="#"><i class="sm:mr-2 md:mr-3 lg:mr-4 fas fa-rss"></i></li>
+          <li href="#" class="  sm:mr-2 md:mr-3 lg:mr-4 tag-a">
             <i
-              style="font-size: 35px; color: rgb(175, 175, 175)"
+              style="font-size: 23px; color: rgb(175, 175, 175)"
               class="fa fa-shopping-cart"
             ></i>
-            <div class="cart-info-style">      
-           <table id="cart-content">
-              <thead >
-                <tr>
-                  <th>تصویر</th>
-                  <th>اسم دوره</th>
-                  <th>قیمت</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody >
-              </tbody>
-            </table>
+            <div class="cart-info-style">
+              <table id="cart-content">
+                <thead>
+                  <tr>
+                    <th>تصویر</th>
+                    <th>اسم دوره</th>
+                    <th>قیمت</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
             </div>
-          </a>
-        
+          </li>
+          <li class=" sm:hidden lg:inline-block md:inline-block hidden ">
+            <div >
+              <div class="theme-switch-wrapper ">
+                <label class="theme-switch">
+                  <input type="checkbox" />
+                  <div class="slider round"></div>
+                </label>
+                <span id="toggle-icon">
+                  <span class="toggle-text">تم سایت </span>
+                </span>
+              </div>
+            </div>
+          </li>
+        </ul>
       </nav>
     </div>
 
-    <div class="container" id="header">
-      <header>
-        <div class="right">
-          <i class="fas fa-cog gear-1"></i>
+    <div class="containe" id="header">
+      <header class="flex-col lg:flex-row md:flex-row">
+        <div class="right ">
+          <i  class=" fas fa-cog gear-1"></i>
           <i class="fas fa-cog gear-2"></i>
           <img
-            class="img-responsive"
+            class=" "
             src="./assets//img/hero-img.png"
             alt="Pic"
           />
@@ -87,10 +113,10 @@
           <span class="sq-2"></span>
           <span class="sq-3"></span>
         </div>
-        <div class="left">
+        <div class="left ">
           <div>
-            <h1>امیر نوری هستم</h1>
-            <p>
+            <h1 class="lg:text-4xl sm:text-sm text-4xl  font-bold ">امیر نوری هستم</h1>
+            <p class=" md:text-sm   lg:text-6xl   ">
               برنامه نویسی فرانت رو انجام میدهم و اینم ی نمونه از سایت هایی ک
               تاحالا درست کرده ام!
             </p>
@@ -103,7 +129,7 @@
     <div class="container mt-250" id="course">
       <div class="pipe"></div>
       <div class="row">
-        <div class="course">
+        <div class="course ">
           <img
             class="teacher"
             src="assets/img/IMG_20201217_175520_386.jpg"
@@ -121,7 +147,12 @@
             <span> <i class="fas fa-history"></i>13:00 </span>
             <span class="price">ارزون</span>
           </div>
-          <button class="add-to-cart" style="vertical-align: middle" data-id="1">
+          <button
+            class="add-to-cart text-9xl " 
+            style="vertical-align: middle"
+            data-id="1"
+            
+          >
             خرید محصول
           </button>
         </div>
@@ -144,7 +175,11 @@
             <span> <i class="fas fa-history"></i>13:00 </span>
             <span class="price">ارزون</span>
           </div>
-          <button class="add-to-cart" style="vertical-align: middle" data-id="2">
+          <button
+            class="add-to-cart"
+            style="vertical-align: middle"
+            data-id="2"
+          >
             خرید محصول
           </button>
         </div>
@@ -167,7 +202,11 @@
             <span> <i class="fas fa-history"></i>13:00 </span>
             <span class="price">ارزون</span>
           </div>
-          <button class="add-to-cart" style="vertical-align: middle" data-id="3">
+          <button
+            class="add-to-cart"
+            style="vertical-align: middle"
+            data-id="3"
+          >
             خرید محصول
           </button>
         </div>
@@ -177,20 +216,24 @@
             src="assets/img/IMG_20201217_175520_386.jpg"
             alt=""
           />
-          <span class="teacher-name"><b>طراح</b>:امیرنوری</span>
+          <span class="teacher-name"><b>طراح</b>:امیرنوری </span>
           <img
             class="thumb img-responsive"
             src="assets/img/php_book_14751447068495993.jpg"
             alt=""
           />
-          <a  class="proje-name" href="#">دوره طراحی وب</a>
+          <a class="proje-name" href="#">دوره طراحی وب</a>
           <span class="status">در حال برگزاری</span>
 
           <div class="meta">
             <span> <i class="fas fa-history"></i>13:00 </span>
             <span class="price">ارزون</span>
           </div>
-          <button class="add-to-cart" style="vertical-align: middle" data-id="4">
+          <button
+            class="add-to-cart"
+            style="vertical-align: middle"
+            data-id="4"
+          >
             خرید محصول
           </button>
         </div>
@@ -204,7 +247,7 @@
             style="height: 300px"
             id="img"
             class="img-responsive"
-            src="./assets/img/about.jpg"
+            src="./assets/img/undraw_Social_dashboard_re_ocbd.png"
             alt="نصویر پیش زمینه"
           />
         </div>
@@ -239,7 +282,7 @@
             style="height: 300px"
             id="img"
             class="img-responsive"
-            src="./assets/img/about.jpg"
+            src="./assets/img/undraw_Studying_re_deca.png"
             alt="نصویر پیش زمینه"
           />
         </div>
@@ -250,7 +293,7 @@
             style="height: 300px"
             id="img"
             class="img-responsive"
-            src="./assets/img/about.jpg"
+            src="./assets/img/undraw_Photocopy_re_gln4.png"
             alt="نصویر پیش زمینه"
           />
         </div>
@@ -270,107 +313,97 @@
     </div>
     <!--Start Topic-->
     <div class="container mt-250" id="topic">
-
-      <p class="topic-title"> مطلب آموزشی</p>
+      <p class="topic-title">مطلب آموزشی</p>
       <div class="topic">
-          <div class="card"> 
-             <div class="topic-img">
-                <img class="img-responsive" src="assets/img/Web-design-1.png">
-             </div>
-             <div class="topic-detials">
-               <a>
-                طراحی سایت شما ب زیبا ترین حالت
-               </a>
-               <div class="meta">
-                 <span>
-                   نویسنده
-                 </span>
-                 <span>
-                   انتشار:2دی
-                 </span>
-               </div>
-               <p>
-                 ما میتوانیم با استفاده از بروزترین تکنیک هایه برنامه نویسی بهترین سایت ها و بهترین آپ هایه موبایل را در اختیار شما بگذاریم 
-               </p>
-             </div>
-          </div>
-          <div class="card"> 
-            <div class="topic-img">
-               <img class="img-responsive" src="assets/img/Web-design-1.png">
-            </div>
-            <div class="topic-detials">
-              <a>
-               طراحی سایت شما ب زیبا ترین حالت
-              </a>
-              <div class="meta">
-                <span>
-                  نویسنده
-                </span>
-                <span>
-                  انتشار:2دی
-                </span>
-              </div>
-              <p>
-                ما میتوانیم با استفاده از بروزترین تکنیک هایه برنامه نویسی بهترین سایت ها و بهترین آپ هایه موبایل را در اختیار شما بگذاریم 
-              </p>
-            </div>
-         </div>
-         
-      </div>
-      <div class="topic">
-        <div class="card"> 
-           <div class="topic-img">
-              <img class="img-responsive" src="assets/img/Web-design-1.png">
-           </div>
-           <div class="topic-detials">
-             <a>
-              طراحی سایت شما ب زیبا ترین حالت
-             </a>
-             <div class="meta">
-               <span>
-                 نویسنده
-               </span>
-               <span>
-                 انتشار:2دی
-               </span>
-             </div>
-             <p>
-               ما میتوانیم با استفاده از بروزترین تکنیک هایه برنامه نویسی بهترین سایت ها و بهترین آپ هایه موبایل را در اختیار شما بگذاریم 
-             </p>
-           </div>
-        </div>
-        <div class="card"> 
-          <div class="topic-img">
-             <img class="img-responsive" src="assets/img/Web-design-1.png">
+        <div class="card">
+          <div class="topic-img ">
+            <img
+              class="img-responsive"
+              src="assets/img/undraw_In_the_office_re_jtgc.png"
+            />
           </div>
           <div class="topic-detials">
-            <a>
-             طراحی سایت شما ب زیبا ترین حالت
-            </a>
+            <a> طراحی سایت شما ب زیبا ترین حالت </a>
             <div class="meta">
-              <span>
-                نویسنده
-              </span>
-              <span>
-                انتشار:2دی
-              </span>
+              <span> نویسنده </span>
+              <span> انتشار:2دی </span>
             </div>
             <p>
-              ما میتوانیم با استفاده از بروزترین تکنیک هایه برنامه نویسی بهترین سایت ها و بهترین آپ هایه موبایل را در اختیار شما بگذاریم 
+              ما میتوانیم با استفاده از بروزترین تکنیک هایه برنامه نویسی بهترین
+              سایت ها و بهترین آپ هایه موبایل را در اختیار شما بگذاریم
             </p>
           </div>
-       </div>
-       
+        </div>
+        <div class="card">
+          <div class="topic-img">
+            <img
+              class="img-responsive"
+              src="assets/img/undraw_Online_media_re_r9qv.png"
+            />
+          </div>
+          <div class="topic-detials">
+            <a> طراحی سایت شما ب زیبا ترین حالت </a>
+            <div class="meta">
+              <span> نویسنده </span>
+              <span> انتشار:2دی </span>
+            </div>
+            <p>
+              ما میتوانیم با استفاده از بروزترین تکنیک هایه برنامه نویسی بهترین
+              سایت ها و بهترین آپ هایه موبایل را در اختیار شما بگذاریم
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="topic">
+        <div class="card">
+          <div class="topic-img">
+            <img
+              class="img-responsive"
+              src="assets/img/undraw_Digital_nomad_re_w8uy.png"
+            />
+          </div>
+          <div class="topic-detials">
+            <a> طراحی سایت شما ب زیبا ترین حالت </a>
+            <div class="meta">
+              <span> نویسنده </span>
+              <span> انتشار:2دی </span>
+            </div>
+            <p>
+              ما میتوانیم با استفاده از بروزترین تکنیک هایه برنامه نویسی بهترین
+              سایت ها و بهترین آپ هایه موبایل را در اختیار شما بگذاریم
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="topic-img">
+            <img
+              class="img-responsive"
+              src="assets/img/undraw_Social_dashboard_re_ocbd.png"
+            />
+          </div>
+          <div class="topic-detials">
+            <a> طراحی سایت شما ب زیبا ترین حالت </a>
+            <div class="meta">
+              <span> نویسنده </span>
+              <span> انتشار:2دی </span>
+            </div>
+            <p>
+              ما میتوانیم با استفاده از بروزترین تکنیک هایه برنامه نویسی بهترین
+              سایت ها و بهترین آپ هایه موبایل را در اختیار شما بگذاریم
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-    </div>
-    <footer class="mt-250 " id="footer">
-      <div class="container">     
+
+    <footer class="mt-250" id="footer">
+      <div class="container">
         <div class="footer row">
           <div class="side-1">
-            <h5>ارتباط با ما</h5>  
+            <h5>ارتباط با ما</h5>
             <ul>
-              <li><i class="fas fa-map-marker-alt"></i> قاسم اباد حجاب 65 </li>
-              <li><i class="fas fa-phone"></i>09377719178 </li>
+              <li><i class="fas fa-map-marker-alt"></i> قاسم اباد حجاب 65</li>
+              <li><i class="fas fa-phone"></i>09377719178</li>
               <li><i class="far fa-envelope-open"></i>ru13y051@gmail.com</li>
               <li><i class="fab fa-instagram"></i>amir_Mmd_Nouri</li>
             </ul>
@@ -382,17 +415,18 @@
               <li><a href="#">دربارما</a></li>
               <li><a href="#">تماس با ما</a></li>
               <li><a href="#">خدمات</a></li>
-            </ul> </div>
-          <div class="side-3"> 
-            <p>برا عضویت ثبت نام کنید </p>
+            </ul>
+          </div>
+          <div class="side-3">
+            <p>برا عضویت ثبت نام کنید</p>
             <form action="">
-              <input class="email" type="text" placeholder="ایمیل متعبر...">
-              <input class="submit" type="submit" value="اشتراک">
+              <input class="email" type="text" placeholder="ایمیل متعبر..." />
+              <input class="submit" type="submit" value="اشتراک" />
             </form>
           </div>
+        </div>
       </div>
-    </div>
-     <p class="copy-right"> حق نشر این سایت برا ناشر محفوظ است</p>
+      <p class="copy-right">حق نشر این سایت برا ناشر محفوظ است</p>
     </footer>
     <script src="./tss.js"></script>
   </body>

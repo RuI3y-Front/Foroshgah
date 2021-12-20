@@ -69,7 +69,7 @@ function showCoursOnload() {
     var coursesLS = getFromsStorage();
     coursesLS.forEach(function (coursInfo) {
         var row = document.createElement("tr");
-        row.innerHTML = "\n    <tr>\n    <td>\n        <img  src = \"".concat(coursInfo.imge, "\" width=\"100px\">\n    </td>\n    <td>\n        ").concat(coursInfo.title, "\n    </td>\n    <td>\n        ").concat(coursInfo.price, "\n    </td>\n    <td>\n    <a class = \"remove\" href = \"#\" data-id =\"").concat(coursInfo.id, "\">X</a>\n</td> \n    \n</tr> \n    ");
+        row.innerHTML = "\n    <tr>\n    <td>\n        <img  src = \"".concat(coursInfo.imge, "\" max-width=\"100px\">\n    </td>\n    <td>\n        ").concat(coursInfo.title, "\n    </td>\n    <td>\n        ").concat(coursInfo.price, "\n    </td>\n    <td>\n    <a class = \"remove\" href = \"#\" data-id =\"").concat(coursInfo.id, "\">X</a>\n</td> \n    \n</tr> \n    ");
         shopingCart.appendChild(row);
     });
 }
@@ -115,3 +115,15 @@ nav1.addEventListener('click', toggleNav);
 nav2.addEventListener('click', toggleNav);
 nav3.addEventListener('click', toggleNav);
 nav4.addEventListener('click', toggleNav);
+//Theme Site
+var toggleSwitch = document.querySelector('input[type="checkbox"]');
+function switchTheme(event) {
+    if (event.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+    else {
+        document.documentElement.setAttribute('data-theme', 'light');
+    }
+}
+//Event Listener
+toggleSwitch.addEventListener('change', switchTheme);

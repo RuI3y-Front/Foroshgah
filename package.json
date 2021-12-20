@@ -1,0 +1,23 @@
+{
+  "name": "Test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tss.js",
+  "scripts": {
+    "build": "tailwindcss -i ./src/tailwind.css -o ./dist/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RuI3y-Front/Test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RuI3y-Front/Test/issues"
+  },
+  "homepage": "https://github.com/RuI3y-Front/Test#readme",
+  "dependencies": {
+    "tailwindcss": "^3.0.7"
+  }
+}

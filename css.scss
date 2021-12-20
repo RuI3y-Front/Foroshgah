@@ -4,11 +4,26 @@ $font-family: "vazir";
 $font-weight: 700px;
 $font-style: "normal";
 $defult-font-size: 16px;
-$menu-link: rgb(46, 46, 46);
-$nav-link-hover: rgb(248, 110, 29);
-$soical-icon: #5458;
-$soical-icon-hover: rgba(218, 105, 0, 0.533);
 
+:root {
+  --soical-icon-hover: rgb(0, 234, 255);
+  --nav-link-hover: #0c7bfa;
+  --on-background-alt: rgba(192, 23, 8, 0.7);
+  --menu-link: #ffffff;
+  --on-background: rgb(66, 66, 66);
+  --background: rgb(255, 255, 255);
+  --box-shadow:black
+}
+[data-theme="dark"] {
+  --soical-icon-hover: #c23f3f;
+  --nav-link-hover: rgb(255, 94, 0);
+  --menu-link: rgb(46, 46, 46);
+  --on-primary: #000;
+  --on-background: rgba(255, 255, 255, 0.9);
+  --on-background-alt: rgba(255, 255, 255, 0.7);
+  --background: #121212;
+  --box-shadow:red;
+}
 // Mixins
 @mixin flex($flex: flex, $position-x: center, $position-y: center) {
   //مقادیر پیش فرض گرفته
@@ -33,58 +48,64 @@ $soical-icon-hover: rgba(218, 105, 0, 0.533);
   border-radius: $top-left $top-right $bottom-right $bottom-left;
 }
 
-// @font-face {
-//   font-family: $font-family;
-//   src: url("./assets/fonts/Vazir-Regular-FD-WOL-UI.woff2") format("woff2"),
-//     url("./assets/fonts/Vazir-Regular-FD-WOL-UI.woff") format("woff");
-//   font-weight: normal;
-//   font-display: swap;
-// }
-// @font-face {
-//   font-family: $font-family;
-//   src: url("./assets/fonts/Vazir-Bold-FD-WOL-UI.woff2") format("woff2"),
-//     url("./assets/fonts/Vazir-Bold-FD-WOL-UI.woff") format("woff");
-//   font-weight: bold;
-//   font-display: swap;
-// }
-// @font-face {
-//   font-family: $font-family;
-//   src: url("./assets/fonts/Vazir-Thin-FD-WOL-UI.woff2") format("woff2"),
-//     url("./assets/fonts/Vazir-Thin-FD-WOL-UI.woff") format("woff");
-//   font-weight: 100;
-//   font-display: swap;
-// }
-// @font-face {
-//   font-family: $font-family;
-//   src: url("./assets/fonts/Vazir-Light-FD-WOL-UI.woff2") format("woff2"),
-//     url("./assets/fonts/Vazir-Light-FD-WOL-UI.woff") format("woff");
-//   font-weight: 300;
-//   font-display: swap;
-// }
-// @font-face {
-//   font-family: $font-family;
-//   src: url("./assets/fonts/Vazir-Medium-FD-WOL-UI.woff2") format("woff2"),
-//     url("./assets/fonts/Vazir-Medium-FD-WOL-UI.woff") format("woff");
-//   font-weight: 500;
-//   font-display: swap;
-// }
-// @font-face {
-//   font-family: $font-family;
-//   src: url("./assets/fonts/Vazir-Black-FD-WOL-UI.woff2") format("woff2"),
-//     url("./assets/fonts/Vazir-Black-FD-WOL-UI.woff") format("woff");
-//   font-weight: 900;
-//   font-display: swap;
-// }
+@font-face {
+  font-family: $font-family;
+  src: url("./assets/fonts/Vazir-Regular-FD-WOL-UI.woff2") format("woff2"),
+    url("./assets/fonts/Vazir-Regular-FD-WOL-UI.woff") format("woff");
+  font-weight: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: $font-family;
+  src: url("./assets/fonts/Vazir-Bold-FD-WOL-UI.woff2") format("woff2"),
+    url("./assets/fonts/Vazir-Bold-FD-WOL-UI.woff") format("woff");
+  font-weight: bold;
+  font-display: swap;
+}
+@font-face {
+  font-family: $font-family;
+  src: url("./assets/fonts/Vazir-Thin-FD-WOL-UI.woff2") format("woff2"),
+    url("./assets/fonts/Vazir-Thin-FD-WOL-UI.woff") format("woff");
+  font-weight: 100;
+  font-display: swap;
+}
+@font-face {
+  font-family: $font-family;
+  src: url("./assets/fonts/Vazir-Light-FD-WOL-UI.woff2") format("woff2"),
+    url("./assets/fonts/Vazir-Light-FD-WOL-UI.woff") format("woff");
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: $font-family;
+  src: url("./assets/fonts/Vazir-Medium-FD-WOL-UI.woff2") format("woff2"),
+    url("./assets/fonts/Vazir-Medium-FD-WOL-UI.woff") format("woff");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: $font-family;
+  src: url("./assets/fonts/Vazir-Black-FD-WOL-UI.woff2") format("woff2"),
+    url("./assets/fonts/Vazir-Black-FD-WOL-UI.woff") format("woff");
+  font-weight: 900;
+  font-display: swap;
+}
+html{
+  scroll-behavior: smooth;
+}
 * {
   font-family: $font-family;
   direction: rtl;
   margin: 0;
   padding: 0;
   box-sizing: border;
+ 
 }
+
 body {
   font-family: $font-family;
   overflow-x: hidden;
+
 }
 
 ul,
@@ -125,12 +146,12 @@ a {
     z-index: 9;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 70%;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.7);
     transform: translateX(-100vh);
-   opacity: 0;
-   nav,ul{
+    opacity: 0;
+    nav,ul{
      height: 100vh;
      margin: 0;
      padding: 0;
@@ -160,7 +181,7 @@ a {
    nav li a {
     position: relative;
     top: 45%;
-    color: #fff;
+    color: rgb(255, 255, 255);
     text-transform: uppercase;
     letter-spacing: 4px;
     text-decoration: none;
@@ -171,13 +192,12 @@ a {
     }
     &::before {
       content: '';
-      width: 25vh;
+      width:32vh;
       height: 3px;
       background-color: #fff;
       position: absolute;
       top: 47.5%;
       left: 0;
-      opacity: 0;
     }
   }
   .slide-in-1{
@@ -197,7 +217,7 @@ a {
   }
   @keyframes slide-in {
       from{
-        transform: translateX(-100%);
+        transform: translateX(-170%);
       }
       to{
         transform: translateX(0);
@@ -226,18 +246,21 @@ a {
         transform: translateX(0%);
       }
       to{
-        transform: translateX(-100%);
+        transform: translateX(-170%);
       }
   }
   }
   .overlay-slide-right{
     transition: all 0.4s ease-in-out;
     transform: translateX(0);
-    opacity: 2;
+    opacity:1;
+   
+   
+
   }
   .overlay-slide-left{
     transition: all 1s ease-in-out;
-    transform: translateX(-100vw);
+    transform: translateX(-130vw);
   }
   .navbar {
     font-size: $defult-font-size + 1px;
@@ -247,16 +270,16 @@ a {
 
       .menu-bars{
         z-index: 10;
-        display: inline;
         cursor: pointer;
-        
+      
+        }
         .bar1,.bar2,.bar3{
           width: 35px;
           height: 2px;
-          background-color: rgb(197, 197, 197);
+          background-color: rgb(121, 121, 121);
           margin: 8px 0;
           transition: 0.4s;
-        }
+       
           .change .bar1{
             transform: rotate(-45deg) translate(-7px,8px);
           }
@@ -268,11 +291,11 @@ a {
           }
 
       }
-    ul {
+      .ul-first-menu {
+
       li {
         display: inline-block;
         line-height: 60px;
-        @include margin-padding(0, 0, 0, 18px);
         position: relative;
         cursor: pointer;
         &::after {
@@ -283,30 +306,34 @@ a {
           right: 0;
           width: 0;
           height: 2px;
-          background-color: $nav-link-hover;
+          background-color: var(--soical-icon-hover);
           transition: width 0.5s ease;
         }
         &:hover::after {
           width: 100%;
         }
         a {
-          color: $menu-link;
+          color: black;
           transition: color 0.3s ease;
+          @include margin-padding(0, 0, 0, 18px);
+
         }
         &:hover a {
-          color: $nav-link-hover;
+          color: var(--nav-link-hover);
         }
       }
     }
     .social-icons {
       direction: ltr;
       cursor: pointer;
-      @include margin-padding(20px, 0, 0, 0, false);
+      display: flex;
+      margin-left: 20px;
+      @include margin-padding(10px, 0, 0, 0, false);
       a {
-        color: $soical-icon;
+        color: gray;
         transition: color 0.3s ease;
         &:hover {
-          color: $soical-icon-hover;
+          color:var(--soical-icon-hover);
         }
         i {
           @include margin-padding(0, 8px, 0, 0);
@@ -314,8 +341,6 @@ a {
       }
     }
     .tag-a {
-      position: absolute;
-      left: 100px;
       &:hover .cart-info-style {
         display: block;
       }
@@ -323,7 +348,7 @@ a {
         display: none;
         position: absolute;
         left: -28px;
-        top: 50px;
+        top: 47px;
         z-index: 1;
         background-color: rgb(236, 195, 195);
         @include margin-padding(15px, 20px, 15px, 25px, false);
@@ -338,6 +363,9 @@ a {
           padding: 12px 15px;
           text-align: right;
           border-bottom: 1px solid #e1e1e1;
+          img{
+            max-width: 100px;
+          }
           a {
             padding: 10px;
             cursor: pointer;
@@ -360,7 +388,7 @@ a {
     @include flex(flex, space-between, flex-start);
 
     .right {
-      @include section-creator(flex, 67%, 67%);
+      @include section-creator(flex, 50%, 65%);
       position: relative;
       .gear-1 {
         position: absolute;
@@ -434,10 +462,10 @@ a {
       }
     }
     .left {
-      @include section-creator(flex, 32%, 32%);
+      @include section-creator(flex, 44%, 49%);
       @include margin-padding(6%, 0, 0, 0);
       h1 {
-        font-size: $defult-font-size + 15;
+        
         @include margin-padding(0, 0, 30px, 0);
       }
     }
@@ -447,35 +475,34 @@ a {
 //cours Style
 #course {
   position: relative;
-  .pipe {
-    position: absolute;
-    width: 1300px;
-    height: 370px;
-    background-color: rgba(51, 51, 51, 0.08);
-    top: 83px;
-    left: -143px;
-    @include border-raduis(0, 250px, 250px, 0);
-  }
+  // .pipe {
+  //   position: absolute;
+  //   width: 1300px;
+  //   height: 370px;
+  //   background-color: rgba(51, 51, 51, 0.08);
+  //   top: 83px;
+  //   left: -143px;
+  //   @include border-raduis(0, 250px, 250px, 0);
+  // }
   .row {
     flex-wrap: wrap;
 
     .course {
       flex-direction: column;
-      @include section-creator(flex, 21%, 21%);
+      @include section-creator(flex, 195px, 196px);
       background-color: white;
       position: relative;
       border-bottom: 4px solid turquoise;
       @include border-raduis(0, 0, 5px, 5px);
       cursor: pointer;
-      @include margin-padding(20px, 16px, 0, 16px);
+      @include margin-padding(53px, 16px, 0, 16px);
       transition: 0.5s ease;
       &:hover {
         box-shadow: 0 0 13px 0px rgba(95, 95, 95, 0.5);
       }
       &:hover .teacher {
         top: -51px;
-      }
-      &:hover .teacher-name {
+      }      &:hover .teacher-name {
         width: 50%;
         right: 65px;
         font-size: $defult-font-size + 1;
@@ -549,12 +576,10 @@ a {
       color: #ffffff;
       text-align: center;
       font-size: $defult-font-size;
-      @include margin-padding(10px, 20px, 10px, 20px, false);
-      width: 120px;
+      @include margin-padding(6px, 10px, 4px, 11px, false);
       transition: all 0.5s;
       cursor: pointer;
-      @include margin-padding(20px, 60px, 0, 0);
-      white-space: nowrap;
+      @include margin-padding(0,10px, 0, 10px);
     }
 
     .button span {
@@ -617,19 +642,19 @@ a {
 //Topic
 
 #topic {
-  &::after,
-  &::before{
-    position: relative;
-    position: absolute;
-    background: rgba(144 ,124,255,0.08);
-    width: 200px;
-    content: '';
-    bottom: 90px;
-    left: -250px;
-    height: 250px;
-    transform: skewX(10deg);
-    @include border-raduis(0, 20px, 50px , 0)
-  }
+  // &::after,
+  // &::before{
+  //   position: relative;
+  //   position: absolute;
+  //   background: rgba(144 ,124,255,0.08);
+  //   width: 200px;
+  //   content: '';
+  //   bottom: 90px;
+  //   left: -250px;
+  //   height: 250px;
+  //   transform: skewX(10deg);
+  //   @include border-raduis(0, 20px, 50px , 0)
+  // }
   &::after{
     bottom: 150px;
     left: -260px;
@@ -774,7 +799,7 @@ a {
           }
           .submit{
             position: absolute;
-            top: 9px;
+            top: 1px;
             left: 4px;
             border: 0;
             background-color: transparent;
@@ -797,3 +822,65 @@ a {
     font-size: $defult-font-size + 4px;
   }
 }
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+ 
+  .toggle-text {
+    position: relative;
+    top: -4px;
+    right: 5px;
+    color: var(--box-shadow);
+  }
+  .theme-switch {
+    display: inline-block;
+    height: 22px;
+    position: relative;
+    width: 35px;
+    input{
+      display: none;
+      
+    }
+    .slider{
+      background: #ccc;
+      bottom: 0;
+      cursor: pointer;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: 0.4s;
+      &::before{
+        background: #fff;
+        bottom: 4px;
+        content: "";
+        height: 16px;
+        left: 4px;
+        position: absolute;
+        transition: 0.4s;
+        width: 16px;
+      }
+    }
+   input:checked + .slider{
+     background-color: red;
+   }
+   input:checked + .slider::before{
+    transform: translateX(14px);
+   }
+  }
+  
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round::before {
+  border-radius: 50%;
+}
+
+.fas {
+  font-size: 30px;
+  margin-right: 5px;
+}
+}
+
+
